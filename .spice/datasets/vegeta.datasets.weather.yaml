@@ -14,5 +14,5 @@ migrations:
         - name: id
 
     sql: |
-      CREATE OR REPLACE VIEW vegeta.datasets.weather AS
+      CREATE OR REPLACE VIEW "@vegeta".datasets.weather AS
         SELECT * FROM vegeta_datasets.public.weather;
