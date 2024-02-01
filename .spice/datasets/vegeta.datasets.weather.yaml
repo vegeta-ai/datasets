@@ -1,9 +1,9 @@
 name: 'vegeta.datasets.weather'
-description: daily weather conditions
 type: append
 
 migrations:
   - name: create_view
+
     access:
       read:
         - '*'
@@ -11,8 +11,28 @@ migrations:
     acceleration:
       type: raw
       columns:
-        - name: id
+        - name: block_number
 
     sql: |
-      CREATE OR REPLACE VIEW "@vegeta".datasets.weather AS
-        SELECT * FROM vegeta_datasets.public.weather;
+      CREATE OR REPLACE VIEW vegeta.datasets.weather AS
+        SELECT * FROM eth.recent_transactions;
+
+
+# name: 'vegeta.datasets.weather'
+# description: daily weather conditions
+# type: append
+
+# migrations:
+#   - name: create_view
+#     access:
+#       read:
+#         - '*'
+
+#     acceleration:
+#       type: raw
+#       columns:
+#         - name: id
+
+#     sql: |
+#       CREATE OR REPLACE VIEW "@vegeta".datasets.weather AS
+#         SELECT * FROM vegeta_datasets.public.weather;
