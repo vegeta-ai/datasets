@@ -1,0 +1,18 @@
+name: 'vegeta.datasets.weather'
+description: daily weather conditions
+type: append
+
+migrations:
+  - name: create_view
+    access:
+      read:
+        - '*'
+
+    acceleration:
+      type: raw
+      columns:
+        - name: id
+
+    sql: |
+      CREATE OR REPLACE VIEW vegeta.datasets.weather AS
+        SELECT * FROM vegeta_datasets.public.weather;
