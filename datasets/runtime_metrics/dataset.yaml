@@ -1,0 +1,11 @@
+name: 'vegeta-ai.datasets.runtime_metrics'
+type: append
+migrations:
+  - name: create_table
+    sql: |
+      CREATE TABLE IF NOT EXISTS "vegeta-ai".datasets.runtime_metrics (
+        timestamp BIGINT,
+        metrics TEXT,
+        value FLOAT,
+        labels TEXT
+      )
