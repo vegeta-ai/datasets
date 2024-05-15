@@ -1,4 +1,4 @@
-name: weather
+name: weather_view
 description: daily weather conditions
 type: append
 
@@ -14,5 +14,5 @@ migrations:
         - name: id
 
     sql: |
-      CREATE OR REPLACE VIEW vegeta-ai.datasets.weather AS
+      CREATE OR REPLACE VIEW vegeta-ai.datasets.weather_view AS
         SELECT * FROM vegeta_datasets.public.weather;
